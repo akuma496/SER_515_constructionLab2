@@ -10,11 +10,17 @@
   really knowing what that behavior is - in some ways that sounds unsafe
   (and it could be!) but also quite powerful.
 */
-public interface AltVehicleInspection {
+public class AltVehicleInspection implements IVehicleInspector {
     /* A vehicle Inspector is supposed to visit
        all the vehicles parked in his shop and
        calculate the cost for each one of them. */
-    int visit(Car car1);
-    int visit(Van van2);
-    int visit(Motorbike motorbike3);
+    public int visit(Car car1) {
+      return 214;
+    }
+    public int visit(Van van2){
+      return 12;
+    }
+    public int visit(Motorbike motorbike3){
+      return 2;
+    }
 }
