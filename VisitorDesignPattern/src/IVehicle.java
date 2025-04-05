@@ -3,5 +3,5 @@ public interface IVehicle {
     // is supposed to let the Vehicle Inspector to calculate
     // the total Service Charge.
     int accept(IVehicleInspector vehicleInspector);
-    int co2Emissions();
+    float co2Emissions();
 }
