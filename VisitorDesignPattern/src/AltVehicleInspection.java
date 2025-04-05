@@ -1,26 +1,37 @@
-/*
-  The Visitor Design Pattern is one of the more obscure Go4 Design Patterns
-  but in some ways is even more powerful than the Strategy or Decorator
-  patterns. Each of those patterns has a structural constraint - in the case
-  of a Decorator it is quite explicit, as you type-extend something but
-  also use an instance of it to add a behavior. And you are type-bound.
-  A Strategy pattern is subject to the "interface zoo" problem when you
-  attempt to apply multiple behaviors to multiple related types (think I/O).
-  Visitor allows you to dynamically add a behavior to an object without
-  really knowing what that behavior is - in some ways that sounds unsafe
-  (and it could be!) but also quite powerful.
-*/
 public class AltVehicleInspection implements IVehicleInspector {
-    /* A vehicle Inspector is supposed to visit
-       all the vehicles parked in his shop and
-       calculate the cost for each one of them. */
-    public int visit(Car car1) {
-      return 214;
-    }
-    public int visit(Van van2){
-      return 12;
-    }
-    public int visit(Motorbike motorbike3){
-      return 2;
-    }
+  @Override
+  public int visit(Car car) {
+      int serviceCharge = 3120;
+      if(car.getColor()=="Black"){
+          serviceCharge += 1200;
+      }else{
+          serviceCharge += 530;
+      }
+      System.out.println("AltService Charge for Car: " + serviceCharge);
+      return serviceCharge;
+  }
+
+  @Override
+  public int visit(Van van) {
+      int serviceCharge = 10;
+      if(van.getNumberOfDoors()>4){
+          serviceCharge += 5020;
+      }else{
+          serviceCharge += 1100;
+      }
+      System.out.println("AltService Charge for Van: " + serviceCharge);
+      return serviceCharge;
+  }
+
+  @Override
+  public int visit(Motorbike motorbike) {
+      int serviceCharge = 20;
+      if(motorbike.getEngineCapacity()>=200){
+          serviceCharge += 1200;
+      }else{
+          serviceCharge += 520;
+      }
+      System.out.println("AltService Charge for Motorbike: " + serviceCharge);
+      return serviceCharge;
+  }
 }
