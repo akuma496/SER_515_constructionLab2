@@ -36,7 +36,8 @@ public class Act3VehicleService {
     public int calculateTotal(IVehicle[] vehicles) {
         int total = 0;
         for (IVehicle vehicle : vehicles) {
-            total += vehicle.accept(vehicleInspector) + emissionsStrategy.computeEmissionsFee(vehicle);
+            total += vehicle.accept(vehicleInspector);
+            total += emissionsStrategy.computeEmissionsFee(vehicle);
         }
         return total;
     }
