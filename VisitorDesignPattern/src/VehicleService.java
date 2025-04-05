@@ -4,7 +4,7 @@ public class VehicleService {
     VehicleService() {
 	// PROBLEM 1: We are new'ing up a specific implementation
 	// of our Inspection Service - you know how to fix this!
-	inspector = new VehicleInspection();
+	inspector = VehicleFactory.getVehicleInspector("String");
     }
     
     /* Returns the total Service charge for all the vehicles
