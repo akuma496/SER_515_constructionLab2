@@ -18,6 +18,11 @@ public class Motorbike implements IVehicle {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
+    public float co2Emissions() {
+        return 8887*(1+(0.01f * (100-engineCapacity)));  //0.05f makes it float
+    }
+
     @Override
     public int accept(IVehicleInspector vehicleInspector) {
         return vehicleInspector.visit(this);
