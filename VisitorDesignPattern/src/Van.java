@@ -19,6 +19,7 @@ public class Van implements IVehicle {
         this.numberOfDoors = numberOfDoors;
     }
 
+    @Override
     public float co2Emissions() {
         return 8887*(1+(0.1f * (numberOfDoors - 2)));  //0.05f makes it float
     }

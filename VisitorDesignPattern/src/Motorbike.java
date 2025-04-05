@@ -19,6 +19,7 @@ public class Motorbike implements IVehicle {
         this.brand = brand;
     }
 
+    @Override
     public float co2Emissions() {
         return 8887*(1+(0.01f * (100-engineCapacity)));  //0.05f makes it float
     }

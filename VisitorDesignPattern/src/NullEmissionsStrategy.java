@@ -1,5 +1,5 @@
-public class NullEmissionsStrategy {
-    public float computeEmissionsFee(IVehicle vehicle) {
+public class NullEmissionsStrategy implements IEmissionsStrategy {
+    public int computeEmissionsFee(IVehicle vehicle) {
         return 0;
     }
 }

@@ -18,6 +18,7 @@ public class Car implements IVehicle {
     public void setManufactureDate(int manufactureDate) {
         this.manufactureDate = manufactureDate;
     }
+    @Override
     public float co2Emissions() {
         return 8887*(1+(0.05f * (2020-manufactureDate)));  //0.05f makes it float
     }
